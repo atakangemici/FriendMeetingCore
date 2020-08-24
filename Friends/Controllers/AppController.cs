@@ -37,14 +37,15 @@ namespace Friends.Controllers
 
         }
 
-        [Route("add_user"), HttpPost]
-        public async Task<ActionResult> AddUser([FromBody]JObject user)
+        [Route("register"), HttpPost]
+        public async Task<ActionResult> Register([FromBody]JObject user)
         {
             var getUser = await _dbContext.User.Where(x => x.Name == (string)user["user_name"] && x.Password == (string)user["password"]).SingleOrDefaultAsync();
 
             if (getUser == null)
             {
                 User addUser = new User();
+                addUser.NameSurename = (string)user["name_surename"];
                 addUser.Name = (string)user["user_name"];
                 addUser.Password = (string)user["password"];
                 addUser.UserId = 0;
@@ -56,7 +57,20 @@ namespace Friends.Controllers
                 return Ok(addUser.Id);
 
             }
-            return Ok();
+
+            return Ok(false);
+
+        }
+
+        [Route("login"), HttpPost]
+        public async Task<ActionResult> Login([FromBody]JObject user)
+        {
+            var getUser = await _dbContext.User.Where(x => x.Name == (string)user["user_name"] && x.Password == (string)user["password"]).SingleOrDefaultAsync();
+
+            if (getUser != null)
+                return Ok(getUser.Id);
+
+            return Ok(false);
 
         }
 

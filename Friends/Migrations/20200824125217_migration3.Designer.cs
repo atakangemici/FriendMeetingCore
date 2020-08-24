@@ -3,14 +3,16 @@ using Friends;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Friends.Migrations
 {
     [DbContext(typeof(FriendsContext))]
-    partial class FriendsContextModelSnapshot : ModelSnapshot
+    [Migration("20200824125217_migration3")]
+    partial class migration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,9 +59,6 @@ namespace Friends.Migrations
 
                     b.Property<string>("QuestionType")
                         .HasColumnName("question_type");
-
-                    b.Property<string>("Subject")
-                        .HasColumnName("subject");
 
                     b.Property<int>("UserId")
                         .HasColumnName("user_id");

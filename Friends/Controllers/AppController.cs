@@ -83,6 +83,7 @@ namespace Friends.Controllers
 
             questions.UserId = (int)question["user_id"];
             questions.Question = (string)question["question"];
+            questions.Subject = (string)question["subject"];
             questions.QuestionType = (string)question["question_type"];
 
             _dbContext.Questions.Add(questions);
@@ -90,6 +91,52 @@ namespace Friends.Controllers
 
             return Ok();
 
+
+        }
+
+
+        [Route("add_reply"), HttpPost]
+        public async Task<ActionResult> AddReply([FromBody]JObject reply)
+        {
+
+            //Questions questions = new Questions();
+
+            //questions.UserId = (int)question["user_id"];
+            //questions.Question = (string)question["question"];
+            //questions.Subject = (string)question["subject"];
+            //questions.QuestionType = (string)question["question_type"];
+
+            //_dbContext.Questions.Add(questions);
+            //await _dbContext.SaveChangesAsync();
+
+            return Ok();
+
+
+        }
+
+        [Route("delete_questions/{id:int}"), HttpGet]
+        public async Task<ActionResult> DeleteQuestions(int id)
+        {
+            var getQuestions = await _dbContext.Questions.Where(x => x.UserId == id).ToListAsync();
+
+            foreach (var question in getQuestions)
+            {
+                question.Deleted = true;
+
+                await _dbContext.SaveChangesAsync();
+
+            }
+
+            return Ok(true);
+
+        }
+
+        [Route("get_questions/{id:int}"), HttpGet]
+        public async Task<ActionResult> GetQuestions(int id)
+        {
+            var getQuestions = await _dbContext.Questions.Where(x => !x.Deleted && x.UserId == id).ToListAsync();
+
+            return Ok(getQuestions);
 
         }
 

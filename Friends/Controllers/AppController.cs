@@ -96,18 +96,30 @@ namespace Friends.Controllers
 
 
         [Route("add_reply"), HttpPost]
-        public async Task<ActionResult> AddReply([FromBody]JObject reply)
+        public async Task<ActionResult> AddReply([FromBody]JObject replys)
         {
+            var getQuestions = await _dbContext.Questions.Where(x => x.UserId == (int)replys["userId"] && !x.Deleted).ToListAsync();
 
-            //Questions questions = new Questions();
 
-            //questions.UserId = (int)question["user_id"];
-            //questions.Question = (string)question["question"];
-            //questions.Subject = (string)question["subject"];
-            //questions.QuestionType = (string)question["question_type"];
+            foreach (var reply in replys)
+            {
+                foreach (var question in getQuestions)
+                {
+                    if (question.Question == reply.Key)
+                    {
+                        Participants participant = new Participants();
+                        participant.UserId = (int)replys["userId"];
+                        participant.QuestionId = (int)question.Id;
+                        participant.Reply = reply.Value.ToString();
 
-            //_dbContext.Questions.Add(questions);
-            //await _dbContext.SaveChangesAsync();
+                        _dbContext.Participants.Add(participant);
+                        await _dbContext.SaveChangesAsync();
+
+                    }
+
+                }
+            }
+
 
             return Ok();
 

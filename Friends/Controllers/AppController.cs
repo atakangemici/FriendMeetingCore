@@ -100,16 +100,27 @@ namespace Friends.Controllers
         {
             var getQuestions = await _dbContext.Questions.Where(x => x.UserId == (int)replys["userId"] && !x.Deleted).ToListAsync();
 
+            Respondents respon = new Respondents();
+            respon.RespondentName = (string)replys["replyName"];
+            respon.ReplyDate = Convert.ToString(DateTime.Now);
+            respon.UserId = (int)replys["userId"];
+
+            _dbContext.Respondents.Add(respon);
+            await _dbContext.SaveChangesAsync();
 
             foreach (var reply in replys)
             {
+
                 foreach (var question in getQuestions)
                 {
                     if (question.Question == reply.Key)
                     {
                         Replys userReply = new Replys();
-                        userReply.RespondentId = (int)replys["userId"];
+                        userReply.RespondentName = (string)replys["replyName"];
+                        userReply.RespondentId = respon.Id;
                         userReply.QuestionId = (int)question.Id;
+                        userReply.Question = question.Question;
+                        userReply.Subject = question.Subject;
                         userReply.Reply = reply.Value.ToString();
 
                         _dbContext.Replys.Add(userReply);
@@ -119,6 +130,7 @@ namespace Friends.Controllers
 
                 }
             }
+
 
 
             return Ok();

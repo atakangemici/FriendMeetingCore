@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Friends.Models
 {
-    public class Participants
+    public class Respondents
     {
 
         [Column("id")]
@@ -16,14 +16,13 @@ namespace Friends.Models
         [Column("user_id")]
         public int UserId { get; set; }
 
-        [Column("question_id")]
-        public int QuestionId { get; set; }
+        [Column("respondent_name")]
+        public string RespondentName { get; set; }
 
-        [Column("reply")]
-        public string Reply { get; set; }
+        [Column("reply_date")]
+        public string ReplyDate { get; set; }
 
-        [Column("participant_name")]
-        public string ParticipantName { get; set; }
+
 
     }
 }

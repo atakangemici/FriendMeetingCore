@@ -16,7 +16,6 @@ C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Debug\netcoreapp2.2\Friends.ru
 C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Debug\netcoreapp2.2\Friends.runtimeconfig.dev.json
 C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Debug\netcoreapp2.2\Friends.dll
 C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Debug\netcoreapp2.2\Friends.pdb
-C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Debug\netcoreapp2.2\Friends.csprojAssemblyReference.cache
 C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Debug\netcoreapp2.2\Friends.csproj.CoreCompileInputs.cache
 C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Debug\netcoreapp2.2\Friends.RazorAssemblyInfo.cache
 C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Debug\netcoreapp2.2\Friends.RazorAssemblyInfo.cs
@@ -25,3 +24,4 @@ C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Debug\netcoreapp2.2\Friends.As
 C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Debug\netcoreapp2.2\Friends.RazorTargetAssemblyInfo.cache
 C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Debug\netcoreapp2.2\Friends.dll
 C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Debug\netcoreapp2.2\Friends.pdb
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Debug\netcoreapp2.2\Friends.csprojAssemblyReference.cache

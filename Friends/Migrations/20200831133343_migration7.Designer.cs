@@ -3,14 +3,16 @@ using Friends;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Friends.Migrations
 {
     [DbContext(typeof(FriendsContext))]
-    partial class FriendsContextModelSnapshot : ModelSnapshot
+    [Migration("20200831133343_migration7")]
+    partial class migration7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,23 +54,14 @@ namespace Friends.Migrations
                         .HasColumnName("id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Question")
-                        .HasColumnName("question");
-
                     b.Property<int>("QuestionId")
                         .HasColumnName("question_id");
 
                     b.Property<string>("Reply")
                         .HasColumnName("reply");
 
-                    b.Property<int>("RespondentId")
-                        .HasColumnName("respondent_id");
-
-                    b.Property<string>("RespondentName")
-                        .HasColumnName("respondent_name");
-
-                    b.Property<string>("Subject")
-                        .HasColumnName("subject");
+                    b.Property<int>("UserId")
+                        .HasColumnName("user_id");
 
                     b.HasKey("Id");
 
@@ -87,9 +80,6 @@ namespace Friends.Migrations
 
                     b.Property<string>("RespondentName")
                         .HasColumnName("respondent_name");
-
-                    b.Property<int>("UserId")
-                        .HasColumnName("user_id");
 
                     b.HasKey("Id");
 

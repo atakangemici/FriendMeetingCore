@@ -107,12 +107,12 @@ namespace Friends.Controllers
                 {
                     if (question.Question == reply.Key)
                     {
-                        Participants participant = new Participants();
-                        participant.UserId = (int)replys["userId"];
-                        participant.QuestionId = (int)question.Id;
-                        participant.Reply = reply.Value.ToString();
+                        Replys userReply = new Replys();
+                        userReply.RespondentId = (int)replys["userId"];
+                        userReply.QuestionId = (int)question.Id;
+                        userReply.Reply = reply.Value.ToString();
 
-                        _dbContext.Participants.Add(participant);
+                        _dbContext.Replys.Add(userReply);
                         await _dbContext.SaveChangesAsync();
 
                     }
@@ -123,6 +123,25 @@ namespace Friends.Controllers
 
             return Ok();
 
+
+        }
+
+        [Route("get_respondents"), HttpPost]
+        public async Task<ActionResult> GetRespondents([FromBody]JObject user)
+        {
+            var getReplys = await _dbContext.Respondents.Where(x => x.UserId == (int)user["id"]).ToListAsync();
+
+            return Ok(getReplys);
+
+        }
+
+
+        [Route("get_replys"), HttpPost]
+        public async Task<ActionResult> GetReplys([FromBody]JObject user)
+        {
+            var getReplys = await _dbContext.Replys.Where(x => x.RespondentId == (int)user["id"]).ToListAsync();
+
+            return Ok(getReplys);
 
         }
 

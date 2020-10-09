@@ -1,0 +1,15 @@
+C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Release\netcoreapp2.2\win-x64\Friends.exe
+C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Release\netcoreapp2.2\win-x64\Friends.deps.json
+C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Release\netcoreapp2.2\win-x64\Friends.runtimeconfig.json
+C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Release\netcoreapp2.2\win-x64\Friends.runtimeconfig.dev.json
+C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Release\netcoreapp2.2\win-x64\Friends.dll
+C:\Users\Developer\Desktop\FriendsApi\Friends\bin\Release\netcoreapp2.2\win-x64\Friends.pdb
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Release\netcoreapp2.2\win-x64\Friends.csprojAssemblyReference.cache
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Release\netcoreapp2.2\win-x64\Friends.csproj.CoreCompileInputs.cache
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Release\netcoreapp2.2\win-x64\Friends.RazorAssemblyInfo.cache
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Release\netcoreapp2.2\win-x64\Friends.RazorAssemblyInfo.cs
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Release\netcoreapp2.2\win-x64\Friends.AssemblyInfoInputs.cache
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Release\netcoreapp2.2\win-x64\Friends.AssemblyInfo.cs
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Release\netcoreapp2.2\win-x64\Friends.RazorTargetAssemblyInfo.cache
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Release\netcoreapp2.2\win-x64\Friends.dll
+C:\Users\Developer\Desktop\FriendsApi\Friends\obj\Release\netcoreapp2.2\win-x64\Friends.pdb
